@@ -6,7 +6,7 @@ coloca os elementos de uma dada sequência em uma certa ordem — em outras pala
 lexicográfica. Existem várias razões para se ordenar uma sequência. Uma delas é a possibilidade se acessar seus dados de modo mais eficiente.
 
 ### Algoritmos de Ordenação: 
-1. [Selection Sort](#Selection-Sort)
+1. [Selection Sort](https://github.com/AlefeAlvesC/Algoritmos_de_Ordenacao/tree/main/Selection-Sort)
 2. [Insertion Sort](#Insertion-Sort)
 3. [Bubble Sort](#Bubble-Sort)
 4. [Heap Sort](#Heap-Sort)
