@@ -12,7 +12,7 @@ lexicográfica. Existem várias razões para se ordenar uma sequência. Uma dela
 4. [Heap Sort](https://github.com/AlefeAlvesC/Algoritmos_de_Ordenacao/tree/main/Heap-Sort)
 5. [Radix Sort](https://github.com/AlefeAlvesC/Algoritmos_de_Ordenacao/tree/main/Radix-Sort)
 6. [Quick Sort](https://github.com/AlefeAlvesC/Algoritmos_de_Ordenacao/tree/main/Quick-Sort)
-7. [Merge Sort](#Merge-Sort)
+7. [Merge Sort](https://github.com/AlefeAlvesC/Algoritmos_de_Ordenacao/tree/main/Merge-Sort)
 ### Algoritmos de Busca:
 1. [Busca Sequêncial](#Busca-Sequencial)
 2. [Busca Binária](#Busca-Binaria)
