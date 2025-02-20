@@ -11,7 +11,7 @@ lexicográfica. Existem várias razões para se ordenar uma sequência. Uma dela
 3. [Bubble-Sort](https://github.com/AlefeAlvesC/Algoritmos_de_Ordenacao/tree/main/Bubble-Sort)
 4. [Heap Sort](https://github.com/AlefeAlvesC/Algoritmos_de_Ordenacao/tree/main/Heap-Sort)
 5. [Radix Sort](https://github.com/AlefeAlvesC/Algoritmos_de_Ordenacao/tree/main/Radix-Sort)
-6. [Quick Sort](#Quick-Sort)
+6. [Quick Sort](https://github.com/AlefeAlvesC/Algoritmos_de_Ordenacao/tree/main/Quick-Sort)
 7. [Merge Sort](#Merge-Sort)
 ### Algoritmos de Busca:
 1. [Busca Sequêncial](#Busca-Sequencial)
