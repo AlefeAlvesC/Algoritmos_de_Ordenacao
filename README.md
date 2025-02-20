@@ -14,5 +14,5 @@ lexicográfica. Existem várias razões para se ordenar uma sequência. Uma dela
 6. [Quick Sort](https://github.com/AlefeAlvesC/Algoritmos_de_Ordenacao/tree/main/Quick-Sort)
 7. [Merge Sort](https://github.com/AlefeAlvesC/Algoritmos_de_Ordenacao/tree/main/Merge-Sort)
 ### Algoritmos de Busca:
-1. [Busca Sequêncial](https://github.com/AlefeAlvesC/Algoritmos_de_Ordenacao/tree/main/Busca-Sequencial)
-2. [Busca Binária](#Busca-Binaria)
+1. [Busca Sequencial](https://github.com/AlefeAlvesC/Algoritmos_de_Ordenacao/tree/main/Busca-Sequencial)
+2. [Busca Binária](https://github.com/AlefeAlvesC/Algoritmos_de_Ordenacao/tree/main/Busca-Binaria)
