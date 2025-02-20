@@ -8,7 +8,7 @@ lexicográfica. Existem várias razões para se ordenar uma sequência. Uma dela
 ### Algoritmos de Ordenação: 
 1. [Selection Sort](https://github.com/AlefeAlvesC/Algoritmos_de_Ordenacao/tree/main/Selection-Sort)
 2. [Insertion Sort](https://github.com/AlefeAlvesC/Algoritmos_de_Ordenacao/tree/main/Insertion-Sort)
-3. [Bubble Sort](#Bubble-Sort)
+3. [Bubble-Sort](https://github.com/AlefeAlvesC/Algoritmos_de_Ordenacao/tree/main/Bubble-Sort)
 4. [Heap Sort](#Heap-Sort)
 5. [Radix Sort](#Radix-Sort)
 6. [Quick Sort](#Quick-Sort)
