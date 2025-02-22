@@ -32,8 +32,12 @@ void lerAquivoSelection(FILE *fp, int tam){
     for(int i = 0; i < tam; i++){
         fscanf(fp, "%d", &vet[i]);
     }
-
+    
+    double ini = tempo_atual();
     ordenaSelection(vet, tam);
+    double fim = tempo_atual();
+    printf("Tempo: %.3f\n", fim-ini);
+
 
     //Abre e escreve em um arquivo os números ordenados
     FILE *fpOrd;

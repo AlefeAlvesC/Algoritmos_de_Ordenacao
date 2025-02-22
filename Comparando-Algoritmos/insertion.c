@@ -36,9 +36,13 @@ void lerArquivoInsertion(FILE *fp, int tam){
     for(int i = 0; i < tam; i++){
         fscanf(fp, "%d", &vet[i]);
     }
-
+    
+    double ini = tempo_atual();
     ordenaInsertion(vet, tam);
-
+    double fim = tempo_atual();
+    printf("Tempo: %.3f\n", fim-ini);
+    
+    
     //Abre e escreve em um arquivos os numeros ordenados.
     FILE *fpOrd;
     fpOrd = fopen(nomeArquivoOrd(tam), "wt");

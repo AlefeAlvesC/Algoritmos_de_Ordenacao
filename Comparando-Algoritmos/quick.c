@@ -45,10 +45,14 @@ void lerArquivoQuick(FILE *fp, int tam){
         fscanf(fp, "%d", &vet[i]);
     }
 
+    double ini = tempo_atual();
     ordenaQuick(vet, 0, tam-1);
+    double fim = tempo_atual();
+    
     printf("Comparacoes Realizadas: %d\n", comparQ);
     printf("Trocas Realizadas: %d\n", trocasQ);
-
+    printf("Tempo: %.3f\n", fim-ini);
+    
     FILE *fpOrd;
     fpOrd = fopen(nomeArquivoOrd(tam), "wt");
     escVetor(fpOrd, tam, vet);

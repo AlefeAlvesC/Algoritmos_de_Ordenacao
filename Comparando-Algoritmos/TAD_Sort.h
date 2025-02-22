@@ -43,3 +43,6 @@ char *nomeArquivoOrd(int tam);
 //Função que escreve em um arquivo um vetor ordenado
 //Paramentros: Ponteiro do arquivo a ser escrito, tamanho do array, e ponteiro do array
 void escVetor(FILE *fp, int tam, int vet[]);
+
+//Função para auxiliar na contagem de tempo de execução dos algoritmos com base no gpt
+double tempo_atual();

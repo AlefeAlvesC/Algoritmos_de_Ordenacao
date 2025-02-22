@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <windows.h>
 #include "TAD_Sort.h"
 
 //Funções para arquivos desordenados
@@ -48,4 +49,12 @@ void escVetor(FILE *fp, int tam, int vet[]){
         else
             fprintf(fp, " %d", vet[i]);
     }
+}
+
+//Código para contagem de tempo pego do gpt
+double tempo_atual() {
+    LARGE_INTEGER freq, counter;
+    QueryPerformanceFrequency(&freq);
+    QueryPerformanceCounter(&counter);
+    return (double)counter.QuadPart / freq.QuadPart;
 }

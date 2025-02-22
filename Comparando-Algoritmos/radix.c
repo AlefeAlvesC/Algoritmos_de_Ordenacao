@@ -40,8 +40,11 @@ void lerArquivoRadix(FILE *fp, int tam){
     for(int i = 0; i < tam; i++){
         fscanf(fp, "%d", &vet[i]);
     }
-
+    double ini = tempo_atual();
     ordenaRadix(vet, tam, 32000);
+    double fim = tempo_atual();
+    printf("Tempo: %.3f\n", fim-ini);
+    
 
     FILE *fpOrd;
     fpOrd = fopen(nomeArquivoOrd(tam), "wt");

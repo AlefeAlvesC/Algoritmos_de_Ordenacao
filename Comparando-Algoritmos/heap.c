@@ -61,7 +61,11 @@ void lerArquivoHeap(FILE *fp, int tam){
         fscanf(fp, "%d", &vet[i]);
     }
 
-    ordenaHeap(vet, tam);
+    double ini = tempo_atual();
+    ordenaHeap(vet, tam);    
+    double fim = tempo_atual();
+    printf("Tempo: %.3f\n", fim-ini);
+    
 
     FILE *fpOrd;
     fpOrd = fopen(nomeArquivoOrd(tam), "wt");

@@ -37,8 +37,12 @@ void lerArquivoBubble(FILE *fp, int tam){
         fscanf(fp, "%d", &vet[i]);
     }
 
+    double ini = tempo_atual();
     ordenaBubble(vet, tam);
-
+    
+    double fim = tempo_atual();
+    printf("Tempo: %.3f\n", fim-ini);
+    
     FILE *fpOrd;
     fpOrd = fopen(nomeArquivoOrd(tam), "wt");
     escVetor(fpOrd, tam, vet);

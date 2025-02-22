@@ -71,11 +71,16 @@ void lerArquivoMerge(FILE *fp, int tam){
     for(int i = 0; i < tam; i++){
         fscanf(fp, "%d", &vet[i]);
     }
-
+    double ini = tempo_atual();
     ordenaMerge(vet, 0, tam-1);
+    double fim = tempo_atual();
+    
+
     printf("Comparacoes Realizadas: %d\n", comparM);
     printf("Trocas Realizadas: %d\n", trocasM);
-
+    printf("Tempo: %.3f\n", fim-ini);
+    
+    
     FILE *fpOrd;
     fpOrd = fopen(nomeArquivoOrd(tam), "wt");
     escVetor(fpOrd, tam, vet);
