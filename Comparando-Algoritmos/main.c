@@ -5,7 +5,7 @@
 
 void criaArquivos(FILE *fp){
     //Abrindo arquivos desordenados em modo de Escrita
-    printf("--- Gerando Arquivos ---\n");
+    printf("\n--- Gerando Arquivos ---\n");
     
     for(int tam = 100; tam <= 100000; tam = tam*10){
         printf("Tamanho do Arquivo: %d\n", tam);
@@ -19,7 +19,7 @@ void criaArquivos(FILE *fp){
 }
 
 void ordenaArquivos(FILE *fp){
-    printf("--- Ordenando Arquivos ---\n");
+    printf("\n--- Ordenando Arquivos ---\n");
 
     for(int tam = 100; tam <= 100; tam = tam * 10){
         printf("\n-----------------------------------");
@@ -64,6 +64,27 @@ void ordenaArquivos(FILE *fp){
 
 }
 
+void menu(FILE *fp){
+    int opc = 1;
+    while(1){
+        printf("=== PROJETO ===\n"
+            "1 - Gerar Arquivos\n"
+            "2 - Ordenar Arquivos\n"
+            "0 - Sair\n"
+            "Opcao: ");
+        scanf("%d", &opc);
+
+        if(opc == 1)
+            criaArquivos(fp);
+        else if(opc == 2)
+            ordenaArquivos(fp);
+        else
+            break;
+        
+    }
+
+}
+
 int main(){
     //Inicializando rand
     srand(time(NULL));
@@ -71,10 +92,9 @@ int main(){
     //Criando ponteiros para escrita/leitura em arquivos desordenados.
     FILE *fp;
     
-    criaArquivos(fp);
-
-    ordenaArquivos(fp);
-    
+    //Observe que no primeiro vez rodando o programa, deve-se escolher primeiro a opção 1
+    //Somente na primeira vez ou se os arquivos não tiverem sido criados.
+    menu(fp);   
 
     return 0;
 }
