@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include "TAD_Sort.h"
 
+//Variaveis global para realizar contagem de comparações
+int comparH = 0;
+//Variaveis global para realizar contagem de trocas
+int trocasH = 0;
+
 void heapify(int vet[], int tam, int pai){
     
     int maior = pai;
@@ -9,9 +14,13 @@ void heapify(int vet[], int tam, int pai){
     int esq = 2 * pai + 1;
     int dir = 2 * pai + 2;
 
+    if(esq < tam)
+        comparH++;
     if(esq < tam && vet[esq] > vet[maior])
         maior = esq;
 
+    if(dir < tam)
+        comparH++;
     if(dir < tam && vet[dir] > vet[maior])
         maior = dir;
     
@@ -19,13 +28,14 @@ void heapify(int vet[], int tam, int pai){
         int temp = vet[pai];
         vet[pai] = vet[maior];
         vet[maior] = temp;
+        trocasH++;
 
         heapify(vet, tam, maior);
     }
 }
 
+//Função para realizar ordenação com Heap Sort
 void ordenaHeap(int vet[], int tam){
-
 
     for(int i = tam/2 - 1; i >= 0; i--){
         heapify(vet, tam, i);
@@ -36,23 +46,12 @@ void ordenaHeap(int vet[], int tam){
         vet[0] = vet[i];
         vet[i] = temp;
 
+        trocasH++;
         heapify(vet, i, 0);
     }
     
-    printf("Comparacoes Realizadas: %d\n", 0);
-    printf("Trocas Realizadas: %d\n", 0);
-}
-
-
-char *nomeArquivoHp(int tam){
-    if(tam == 100)
-        return "Heap100.txt";
-    else if(tam == 1000)
-        return "Heap1000.txt";
-    else if(tam == 1000)
-        return "Heap10000.txt";
-    else
-        return "Heap100000.txt";
+    printf("Comparacoes Realizadas: %d\n", comparH);
+    printf("Trocas Realizadas: %d\n", trocasH);
 }
 
 void lerArquivoHeap(FILE *fp, int tam){
@@ -65,7 +64,7 @@ void lerArquivoHeap(FILE *fp, int tam){
     ordenaHeap(vet, tam);
 
     FILE *fpOrd;
-    fpOrd = fopen(nomeArquivoHp(tam), "wt");
+    fpOrd = fopen(nomeArquivoOrd(tam), "wt");
     escVetor(fpOrd, tam, vet);
     fclose(fpOrd);
 

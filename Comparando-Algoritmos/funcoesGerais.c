@@ -28,7 +28,16 @@ void escDord(FILE *fp, int tam){
 
 //Funções para arquivos ordenados
 
-
+char *nomeArquivoOrd(int tam){
+    if(tam == 100)
+        return "ordenado100.txt";
+    else if(tam == 1000)
+        return "ordenado1000.txt";
+    else if(tam == 1000)
+        return "ordenado10000.txt";
+    else
+        return "ordenado100000.txt";
+}
 
 void escVetor(FILE *fp, int tam, int vet[]){
     for(int i = 0; i < tam; i++){

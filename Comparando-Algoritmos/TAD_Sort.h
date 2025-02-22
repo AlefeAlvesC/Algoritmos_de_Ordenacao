@@ -38,7 +38,7 @@ void escDord(FILE *fp, int tam);
 
 //Função para escolher o nome do arquivo ordenado conforme o tamanho.
 //Paramentros: Qtde de itens a serem escritos
-//char *nomeArquivoOrd(int tam);
+char *nomeArquivoOrd(int tam);
 
 //Função que escreve em um arquivo um vetor ordenado
 //Paramentros: Ponteiro do arquivo a ser escrito, tamanho do array, e ponteiro do array

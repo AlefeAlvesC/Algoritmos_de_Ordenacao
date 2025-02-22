@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "TAD_Sort.h"
 
+//Função para realizar ordenação com Radix Sort 
 void ordenaRadix(int vet[], int tam, int maior){
     int exp = 1;
     
@@ -33,17 +34,6 @@ void ordenaRadix(int vet[], int tam, int maior){
     }
 }
 
-char *nomeArquivoRdx(int tam){
-    if(tam == 100)
-        return "Radix100.txt";
-    else if(tam == 1000)
-        return "Radix1000.txt";
-    else if(tam == 1000)
-        return "Radix10000.txt";
-    else
-        return "Radix100000.txt";
-}
-
 void lerArquivoRadix(FILE *fp, int tam){
     int *vet = (int*) malloc(tam * sizeof(int));
     
@@ -54,7 +44,7 @@ void lerArquivoRadix(FILE *fp, int tam){
     ordenaRadix(vet, tam, 32000);
 
     FILE *fpOrd;
-    fpOrd = fopen(nomeArquivoRdx(tam), "wt");
+    fpOrd = fopen(nomeArquivoOrd(tam), "wt");
     escVetor(fpOrd, tam, vet);
     fclose(fpOrd);
 

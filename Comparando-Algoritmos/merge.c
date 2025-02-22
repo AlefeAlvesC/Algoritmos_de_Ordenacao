@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include "TAD_Sort.h"
 
+//Variaveis global para realizar contagem de trocas e comparações
+int comparM = 0;
+//Variaveis global para realizar contagem de comparações
+int trocasM = 0;
+
 void merge(int vet[], int esq, int meio, int dir){
     int i, j, k;
     int n1 = meio - esq + 1;
@@ -21,6 +26,7 @@ void merge(int vet[], int esq, int meio, int dir){
     k = esq;
 
     while(i < n1 && j < n2){
+        comparM++;
         if(ESQ[i] <= DIR[j]){
             vet[k] = ESQ[i];
             i++;
@@ -28,6 +34,7 @@ void merge(int vet[], int esq, int meio, int dir){
             vet[k] = DIR[j];
             j++;
         }
+        trocasM++;
         k++;
     }
 
@@ -35,15 +42,18 @@ void merge(int vet[], int esq, int meio, int dir){
         vet[k] = ESQ[i];
         i++;
         k++;
+        trocasM++;
     }
 
     while(j < n2){
         vet[k] = DIR[j];
         j++;
         k++;
+        trocasM++;
     }
 }
 
+//Função para realizar ordenação com Merge Sort
 void ordenaMerge(int vet[], int esq, int dir){
     if(esq < dir){
         int meio = esq + (dir - esq) / 2;
@@ -55,18 +65,6 @@ void ordenaMerge(int vet[], int esq, int dir){
     }
 }
 
-char *nomeArquivoMg(int tam){
-    if(tam == 100)
-        return "Merge100.txt";
-    else if(tam == 1000)
-        return "Merge1000.txt";
-    else if(tam == 1000)
-        return "Merge10000.txt";
-    else
-        return "Merge100000.txt";
-}
-
-
 void lerArquivoMerge(FILE *fp, int tam){
     int *vet = (int*) malloc(tam * sizeof(int));
 
@@ -75,9 +73,11 @@ void lerArquivoMerge(FILE *fp, int tam){
     }
 
     ordenaMerge(vet, 0, tam-1);
+    printf("Comparacoes Realizadas: %d\n", comparM);
+    printf("Trocas Realizadas: %d\n", trocasM);
 
     FILE *fpOrd;
-    fpOrd = fopen(nomeArquivoMg(tam), "wt");
+    fpOrd = fopen(nomeArquivoOrd(tam), "wt");
     escVetor(fpOrd, tam, vet);
     fclose(fpOrd);
 

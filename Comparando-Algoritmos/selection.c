@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "TAD_Sort.h"
 
-//Ordena um vetor com selection
+//Função para realizar ordenação com Selection Sort
 void ordenaSelection(int vet[], int tam){
     int comparacoes = 0;
     int trocas = 0;
@@ -24,17 +24,6 @@ void ordenaSelection(int vet[], int tam){
     printf("Trocas Realizadas: %d\n", trocas);
 }
 
-char *nomeArquivoSel(int tam){
-    if(tam == 100)
-        return "Selection100.txt";
-    else if(tam == 1000)
-        return "Selection1000.txt";
-    else if(tam == 1000)
-        return "Selection10000.txt";
-    else
-        return "Selection100000.txt";
-}
-
 void lerAquivoSelection(FILE *fp, int tam){
     //Aloca dinamicamente um vetor
     int *vet = (int*) malloc(tam * sizeof(int));
@@ -48,7 +37,7 @@ void lerAquivoSelection(FILE *fp, int tam){
 
     //Abre e escreve em um arquivo os números ordenados
     FILE *fpOrd;
-    fpOrd = fopen(nomeArquivoSel(tam), "wt");
+    fpOrd = fopen(nomeArquivoOrd(tam), "wt");
     escVetor(fpOrd, tam, vet);
     fclose(fpOrd);
     

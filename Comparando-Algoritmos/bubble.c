@@ -2,18 +2,7 @@
 #include <stdlib.h>
 #include "TAD_Sort.h"
 
-char *nomeArquivoBu(int tam){
-    if(tam == 100)
-        return "Bubble100.txt";
-    else if(tam == 1000)
-        return "Bubble1000.txt";
-    else if(tam == 1000)
-        return "Bubble10000.txt";
-    else
-        return "Bubble100000.txt";
-}
-
-
+//Função para realizar ordenação com Bubble Sort
 void ordenaBubble(int vet[], int tam){
     int comparacoes = 0;
     int trocas = 0;
@@ -51,7 +40,7 @@ void lerArquivoBubble(FILE *fp, int tam){
     ordenaBubble(vet, tam);
 
     FILE *fpOrd;
-    fpOrd = fopen(nomeArquivoBu(tam), "wt");
+    fpOrd = fopen(nomeArquivoOrd(tam), "wt");
     escVetor(fpOrd, tam, vet);
     fclose(fpOrd);
 

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "TAD_Sort.h"
 
+//Função para realizar ordenação com Insertion Sort
 void ordenaInsertion(int vet[], int tam){
     int comparacoes = 0;
     int trocas = 0;
@@ -27,17 +28,6 @@ void ordenaInsertion(int vet[], int tam){
     printf("Trocas Realizadas: %d\n", trocas);
 }
 
-char *nomeArquivoIns(int tam){
-    if(tam == 100)
-        return "Insertion100.txt";
-    else if(tam == 1000)
-        return "Insertion1000.txt";
-    else if(tam == 1000)
-        return "Insertion10000.txt";
-    else
-        return "Insertion100000.txt";
-}
-
 void lerArquivoInsertion(FILE *fp, int tam){
     //Cria um vetor dinamincamente do tamanho de números presente no arquivo.
     int *vet = (int*) malloc(tam * sizeof(int));
@@ -51,7 +41,7 @@ void lerArquivoInsertion(FILE *fp, int tam){
 
     //Abre e escreve em um arquivos os numeros ordenados.
     FILE *fpOrd;
-    fpOrd = fopen(nomeArquivoIns(tam), "wt");
+    fpOrd = fopen(nomeArquivoOrd(tam), "wt");
     escVetor(fpOrd, tam, vet);
     fclose(fpOrd);
 

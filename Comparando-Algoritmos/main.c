@@ -22,6 +22,7 @@ void ordenaArquivos(FILE *fp){
     printf("--- Ordenando Arquivos ---\n");
 
     for(int tam = 100; tam <= 100; tam = tam * 10){
+        printf("\n-----------------------------------");
         printf("\nOrdenando Arquivo de %d Numeros\n", tam);
 
         //Abrindo arquivo desordenado em modo de Leitura
