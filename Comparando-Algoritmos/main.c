@@ -21,7 +21,7 @@ void criaArquivos(FILE *fp){
 void ordenaArquivos(FILE *fp){
     printf("\n--- Ordenando Arquivos ---\n");
 
-    for(int tam = 100; tam <= 100; tam = tam * 10){
+    for(int tam = 100; tam <= 100000; tam = tam * 10){
         printf("\n-----------------------------------");
         printf("\nOrdenando Arquivo de %d Numeros\n", tam);
 

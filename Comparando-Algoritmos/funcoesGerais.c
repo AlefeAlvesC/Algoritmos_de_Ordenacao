@@ -34,7 +34,7 @@ char *nomeArquivoOrd(int tam){
         return "ordenado100.txt";
     else if(tam == 1000)
         return "ordenado1000.txt";
-    else if(tam == 1000)
+    else if(tam == 10000)
         return "ordenado10000.txt";
     else
         return "ordenado100000.txt";

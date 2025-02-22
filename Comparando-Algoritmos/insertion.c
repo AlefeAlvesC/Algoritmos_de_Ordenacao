@@ -4,8 +4,8 @@
 
 //Função para realizar ordenação com Insertion Sort
 void ordenaInsertion(int vet[], int tam){
-    int comparacoes = 0;
-    int trocas = 0;
+    long long comparacoes = 0;
+    long long trocas = 0;
     
     for(int i = 1; i < tam; i++){
         int key = vet[i];
@@ -24,8 +24,8 @@ void ordenaInsertion(int vet[], int tam){
         trocas++;
     }
 
-    printf("Comparacoes Realizadas: %d\n", comparacoes);
-    printf("Trocas Realizadas: %d\n", trocas);
+    printf("Comparacoes Realizadas: %lld\n", comparacoes);
+    printf("Trocas Realizadas: %lld\n", trocas);
 }
 
 void lerArquivoInsertion(FILE *fp, int tam){

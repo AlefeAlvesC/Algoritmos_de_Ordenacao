@@ -5,7 +5,7 @@
 //Função para realizar ordenação com Bubble Sort
 void ordenaBubble(int vet[], int tam){
     int comparacoes = 0;
-    int trocas = 0;
+    long long trocas = 0;
     
     int troca;
     for(int i = 0; i < tam - 1; i++){
@@ -26,7 +26,7 @@ void ordenaBubble(int vet[], int tam){
     }
     
     printf("Comparacoes Realizadas: %d\n", comparacoes);
-    printf("Trocas Realizadas: %d\n", trocas);
+    printf("Trocas Realizadas: %lld\n", trocas);
 }
 
 
