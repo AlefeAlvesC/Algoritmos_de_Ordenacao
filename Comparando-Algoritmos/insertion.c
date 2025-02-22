@@ -37,6 +37,7 @@ void lerArquivoInsertion(FILE *fp, int tam){
         fscanf(fp, "%d", &vet[i]);
     }
     
+    //Ordena o vetor contando comparações, trocas e tempo 
     double ini = tempo_atual();
     ordenaInsertion(vet, tam);
     double fim = tempo_atual();

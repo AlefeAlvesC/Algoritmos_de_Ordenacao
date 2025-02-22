@@ -28,18 +28,19 @@ void lerAquivoSelection(FILE *fp, int tam){
     //Aloca dinamicamente um vetor
     int *vet = (int*) malloc(tam * sizeof(int));
     
-    //Realiza a leitura do arquivo desordenado.
+    //Realiza a leitura do arquivo desordenado armazenando em um vetor.
     for(int i = 0; i < tam; i++){
         fscanf(fp, "%d", &vet[i]);
     }
     
+    //Ordena o vetor contando comparações e trocas e o tempo
     double ini = tempo_atual();
     ordenaSelection(vet, tam);
     double fim = tempo_atual();
     printf("Tempo: %.3f\n", fim-ini);
 
 
-    //Abre e escreve em um arquivo os números ordenados
+    //Abre e escreve em um arquivo os números ordenados do vetor.
     FILE *fpOrd;
     fpOrd = fopen(nomeArquivoOrd(tam), "wt");
     escVetor(fpOrd, tam, vet);

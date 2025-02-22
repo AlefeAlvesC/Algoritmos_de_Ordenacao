@@ -31,18 +31,21 @@ void ordenaBubble(int vet[], int tam){
 
 
 void lerArquivoBubble(FILE *fp, int tam){
+    //Aloca dinamincamente um vetor do tamanho do arquivo
     int *vet = (int*) malloc(tam * sizeof(int));
 
+    //Ler os números do arquivo e salva no vetor
     for(int i = 0; i < tam; i++){
         fscanf(fp, "%d", &vet[i]);
     }
 
+    //Ordena o vetor e conta as comparações, torcas e tempo.
     double ini = tempo_atual();
     ordenaBubble(vet, tam);
-    
     double fim = tempo_atual();
     printf("Tempo: %.3f\n", fim-ini);
     
+    //Abre um arquivo e escreve o vetor ordenado.
     FILE *fpOrd;
     fpOrd = fopen(nomeArquivoOrd(tam), "wt");
     escVetor(fpOrd, tam, vet);

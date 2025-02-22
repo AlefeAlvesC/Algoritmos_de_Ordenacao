@@ -55,18 +55,21 @@ void ordenaHeap(int vet[], int tam){
 }
 
 void lerArquivoHeap(FILE *fp, int tam){
+    //Aloca dinamicante memoria para um vetor com o tamanho de numeros necessarios.
     int *vet = (int*) malloc(tam * sizeof(int));
-
+    
+    //Ler do arquivo os números desordenado e salva no vetor.
     for(int i = 0; i < tam; i++){
         fscanf(fp, "%d", &vet[i]);
     }
 
+    //Ordena o vetor e conta as comparações, trocas e tempo
     double ini = tempo_atual();
     ordenaHeap(vet, tam);    
     double fim = tempo_atual();
     printf("Tempo: %.3f\n", fim-ini);
     
-
+    //Escreve em um arquivo os números ordenados do vetor.
     FILE *fpOrd;
     fpOrd = fopen(nomeArquivoOrd(tam), "wt");
     escVetor(fpOrd, tam, vet);

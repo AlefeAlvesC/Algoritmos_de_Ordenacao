@@ -28,6 +28,10 @@ void lerArquivoQuick(FILE *fp, int tam);
 //Parametros: ponteiro do arquivo a ser ordenada e Qtde de itens.
 void lerArquivoMerge(FILE *fp, int tam);
 
+//Função para Leitura de Arquivo e busca
+//Parametros: ponteiro para arquivos ordenado e desosrdenado e tamanho dos arquivos.
+void lerArquivoBusca(FILE *fpO, FILE *fpD, int tam);
+
 //Função para escolher nome do arquivo desordenado conforme o tamanho.
 //Parametros: Qtde de itens a serem escritos
 char *nomeArquivoDord(int tam);

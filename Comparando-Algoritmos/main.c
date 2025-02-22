@@ -3,7 +3,8 @@
 #include <time.h>
 #include "TAD_Sort.h"
 
-void criaArquivos(FILE *fp){
+void criaArquivos(){
+    FILE* fp;
     //Abrindo arquivos desordenados em modo de Escrita
     printf("\n--- Gerando Arquivos ---\n");
     
@@ -18,7 +19,9 @@ void criaArquivos(FILE *fp){
     }
 }
 
-void ordenaArquivos(FILE *fp){
+void ordenaArquivos(){
+    FILE *fp;
+
     printf("\n--- Ordenando Arquivos ---\n");
 
     for(int tam = 100; tam <= 100000; tam = tam * 10){
@@ -64,20 +67,41 @@ void ordenaArquivos(FILE *fp){
 
 }
 
-void menu(FILE *fp){
+void buscaAleatoria(){
+    FILE *fp, *fp2;//Ponteiro aux para abrir arquivo desordenado
+
+    printf("\n--- Realizando Busca nos Arquivos ---\n");
+
+    for(int tam = 100; tam <= 100000; tam = tam*10){
+        printf("\n-----------------------------------");
+        printf("\nBuscando em Arquivo de %d Numeros\n", tam);
+        
+        fp = fopen(nomeArquivoOrd(tam), "rt");
+        fp2 = fopen(nomeArquivoDord(tam), "rt");
+        lerArquivoBusca(fp, fp2, tam);
+
+        fclose(fp);
+        fclose(fp2);
+    }
+}
+
+void menu(){
     int opc = 1;
     while(1){
         printf("=== PROJETO ===\n"
             "1 - Gerar Arquivos\n"
             "2 - Ordenar Arquivos\n"
+            "3 - Busca Aleatoria\n"
             "0 - Sair\n"
             "Opcao: ");
         scanf("%d", &opc);
 
         if(opc == 1)
-            criaArquivos(fp);
+            criaArquivos();
         else if(opc == 2)
-            ordenaArquivos(fp);
+            ordenaArquivos();
+        else if(opc == 3)
+            buscaAleatoria();
         else
             break;
         
@@ -89,12 +113,9 @@ int main(){
     //Inicializando rand
     srand(time(NULL));
     
-    //Criando ponteiros para escrita/leitura em arquivos desordenados.
-    FILE *fp;
-    
     //Observe que no primeiro vez rodando o programa, deve-se escolher primeiro a opção 1
     //Somente na primeira vez ou se os arquivos não tiverem sido criados.
-    menu(fp);   
+    menu();   
 
     return 0;
 }
